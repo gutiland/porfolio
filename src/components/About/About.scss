@@ -1,0 +1,55 @@
+@use '../../styles/variables' as *;
+
+.about {
+  display: grid;
+  grid-template-columns: 0.85fr 1.15fr;
+  gap: 60px;
+  padding-top: 85px;
+  padding-bottom: 75px;
+}
+
+.about h2 {
+  margin-top: 30px;
+}
+
+.about-copy .lead {
+  font-size: 21px;
+  line-height: 1.6;
+  margin-top: 0;
+}
+
+.about-copy > p:not(.lead) {
+  color: #586051;
+  font-size: 14px;
+}
+
+.skills {
+  margin-top: 30px;
+  > div {
+    border-top: 1px solid #d9dbd0;
+    padding: 15px 0;
+  }
+  span {
+    font-size: 10px;
+    letter-spacing: 1.3px;
+    color: #65724d;
+  }
+  p {
+    font-size: 13px;
+    margin: 8px 0 0;
+  }
+}
+
+@media (max-width: 800px) {
+  .about {
+    grid-template-columns: 1fr;
+    gap: 35px;
+  }
+  .about {
+    padding-top: 55px;
+    padding-bottom: 45px;
+  }
+  .about h2 {
+    margin-bottom: 0;
+  }
+}

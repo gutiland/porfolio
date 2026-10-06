@@ -1,0 +1,76 @@
+@use '../../styles/variables' as *;
+
+.dot {
+  height: 8px;
+  width: 8px;
+  background: #6a822d;
+  border-radius: 50%;
+}
+
+.hero {
+  padding-top: 73px;
+}
+
+h1 {
+  font-size: clamp(58px, 7.8vw, 108px);
+  line-height: 1.01;
+  letter-spacing: -7px;
+  font-weight: 500;
+  margin: 34px 0 38px;
+}
+
+.hero h1 em {
+  position: relative;
+  isolation: isolate;
+  &:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 5px;
+    width: 100%;
+    height: 23px;
+    background: $green;
+    z-index: -1;
+  }
+}
+
+.hero-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 35px;
+}
+
+.hero-bottom p {
+  margin: 0;
+  color: #50574e;
+}
+
+.hero-meta {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 65px;
+  padding: 22px 0;
+  border-top: 1px solid #d9dbd0;
+  font-size: 10px;
+  letter-spacing: 1.3px;
+  color: #5b6357;
+}
+
+@media (max-width: 800px) {
+  .hero {
+    padding-top: 48px;
+  }
+  h1 {
+    letter-spacing: -3.5px;
+  }
+  .hero-bottom {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+  .hero-meta {
+    gap: 18px;
+    line-height: 1.6;
+    margin-top: 40px;
+  }
+}

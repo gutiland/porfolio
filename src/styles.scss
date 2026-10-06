@@ -1,0 +1,118 @@
+@use './styles/variables' as *;
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 30px;
+}
+
+body {
+  margin: 0;
+  background: $paper;
+  color: $ink;
+  font-family: Arial, Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+a:focus-visible {
+  outline: 3px solid #596c16;
+  outline-offset: 6px;
+}
+
+.wrap {
+  width: min(1180px, calc(100% - 96px));
+  margin: auto;
+}
+
+.skip {
+  position: fixed;
+  top: -100px;
+  background: $ink;
+  color: white;
+  padding: 15px;
+  z-index: 10;
+  &:focus {
+    top: 10px;
+  }
+}
+
+.eyebrow {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.7px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+em {
+  font-family: Georgia, serif;
+  font-weight: 400;
+}
+
+p {
+  font-size: 16px;
+  line-height: 1.75;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 35px;
+  padding: 18px 22px;
+  font-size: 13px;
+  font-weight: 600;
+  border-radius: 3px;
+  transition:
+    transform 0.2s,
+    background 0.2s;
+  &:hover {
+    transform: translateY(-2px);
+    background: #394333;
+  }
+}
+
+.dark {
+  background: $ink;
+  color: white;
+}
+
+h2 {
+  font-size: clamp(40px, 5vw, 64px);
+  font-weight: 500;
+  line-height: 1.05;
+  letter-spacing: -2.8px;
+  margin: 25px 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .button {
+    transition: none;
+  }
+}
+
+@media (max-width: 800px) {
+  .wrap {
+    width: calc(100% - 40px);
+  }
+  h2 {
+    letter-spacing: -2px;
+  }
+}
